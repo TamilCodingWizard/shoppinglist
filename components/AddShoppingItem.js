@@ -16,7 +16,7 @@ export const AddShoppingItem = ({addItem}) => {
         <View style={styles.container}>
             <TextInput style={styles.input} placeholder="Enter an Item"
                  value={item} onChangeText={(text) => setItem(text)}/>
-            <Button title='Add item' onPress={() =>pressHandler(item)} />
+            <Button title='Add item' onPress={() =>pressHandler(item)} color='cornflowerblue'/>
         </View>
     )
 }
