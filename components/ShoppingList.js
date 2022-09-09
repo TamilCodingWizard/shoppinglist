@@ -1,6 +1,6 @@
-import { StyleSheet, View,Text, FlatList } from 'react-native';
+import { StyleSheet, View,Text, FlatList, TouchableOpacity } from 'react-native';
 
-export const ShoppingList = ({list}) => {
+export const ShoppingList = ({list,deleteItem}) => {
 
 
     return (
@@ -12,7 +12,9 @@ export const ShoppingList = ({list}) => {
             }}
             renderItem = {({item}) => {
                 return (
-                    <Text style={styles.item}>{item.todo}</Text>
+                    <TouchableOpacity onPress={() => deleteItem(item)}>
+                        <Text style={styles.item}>{item.todo}</Text>
+                    </TouchableOpacity>
                 )
             }}
             style={styles.flatlist}
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
        padding:20,
     },
     separator: {
-        height:0.5,
+        height:1,
         backgroundColor:'lightgray'
     },
     flatlist: {
